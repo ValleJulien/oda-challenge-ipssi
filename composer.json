@@ -11,7 +11,8 @@
         "guzzlehttp/guzzle": "~5.3|~6.0",
         "barryvdh/laravel-dompdf": "^0.6.1",
         "laravelcollective/bus": "^5.2",
-        "maatwebsite/excel": "~2.1.0"
+        "maatwebsite/excel": "~2.1.0",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -46,11 +47,15 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "php artisan optimize",
+            "php artisan vendor:publish",
+            "mkdir -p ./database/jables"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "php artisan optimize",
+            "php artisan vendor:publish",
+            "mkdir -p ./database/jables"
         ]
     },
     "config": {

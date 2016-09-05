@@ -10,6 +10,9 @@ auth.json
 bootstrap/compiled.php
 app/storage/
 
+# Auth Json
+auth.json
+
 # Laravel 5 & Lumen specific
 bootstrap/cache/
 .env.*.php

@@ -11,6 +11,21 @@
     * `php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"`
 - **7** then run in terminal:
     * `php artisan serve` and go to http://localhost:8000/
+- **8** To install the database and everything to get the last version of the projet
+    * POSTGRES install :
+      *  sudo apt-get update
+      *  sudo apt-get install postgresql
+      *  sudo apt-get install phppgadmin
+
+      *  sudo su postgres
+      *  psql
+
+      *  CREATE USER asYouWish WITH PASSWORD 'asYouWish';
+      * ALTER USER asYouWish WITH SUPERUSER;
+    * `php artisan migrate:install`
+    * `php artisan migrate`
+    * `php artisan db:seed`
+    
 *If everything is ok you'll see LARAVEL 5 title main page*
 
 
@@ -61,3 +76,15 @@
 
 - Merge a branch if she exists with the current master is up to date *(place your git version on the branch you would like to merge master)* :
     * `git merge master`
+
+##Credit Card Numbers for test payments
+
+**Warning: The CCV number can be anything (better to use 123) but the expiracy date has to be in the future otherwise the payment will fail.**
+
+ - 4970100000000000 : Paiement accepté avec authentification 3D Secure
+ - 4970100000000007 : Paiement accepté, garantie de paiement = NO
+ - 4970100000000003 : Paiement accepté, marchand non enrôlé 3D Secure
+ - 4970100000000001 : Paiement accepté, acheteur non enrôlé 3D Secure
+ - 4970100000000097 : Paiement refusé pour cause d'authentification 3D Secure échouée, l'acheteur n'est pas parvenu à s'authentifier
+ - 4970100000000098 : Paiement refusé, autorisation refusée pour cause de plafond dépassé
+ - 4970100000000099 : Paiement refusé, autorisation refusée suite à erreur dans le cryptogramme visuel saisi
